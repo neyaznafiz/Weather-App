@@ -7,3 +7,7 @@ body {
   background-size: cover;
   height: 100vh;
 }
+
+::-webkit-scrollbar{
+  width: 0px;
+}
