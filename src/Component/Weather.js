@@ -8,6 +8,7 @@ function Weather() {
 
     // state for store data from fetch
     const [weatherData, setWeatherData] = useState({})
+    console.log(weatherData);
     const { name, main, weather, visibility, wind, sys } = weatherData
     const [loading, setLoading] = useState(false)
 
@@ -113,10 +114,11 @@ function Weather() {
                             {/* sunrise and sunset info */}
                             <p className='text-center text-xl mt-4'>Country: {sys?.country}</p>
                             <div className='flex justify-around w-96 border-b border-white mb-4'>
+                                {/* here i get the time is by default 1663479596 from api, that's whay i can't convert it into hour. because ms count start after 1970, and the default time here is befor that.*/}
                                 <span>
                                     <p className='text-center text-xl'>Sunrise</p>
                                     {sys ?
-                                        <h3 className='text-2xl text-center my-4'><span>{sys?.sunrise}</span></h3>
+                                        <h3 className='text-2xl text-center my-4'><span>{sys?.sunrise}s</span></h3>
                                         :
                                         <h3 className='text-2xl text-center my-2'><span>Time</span></h3>
                                     }
@@ -125,7 +127,7 @@ function Weather() {
                                 <span>
                                     <p className='text-center text-xl'>Sunset</p>
                                     {sys ?
-                                        <h3 className='text-2xl text-center my-4'><span>{sys?.sunset}</span></h3>
+                                        <h3 className='text-2xl text-center my-4'><span>{sys?.sunset}s</span></h3>
                                         :
                                         <h3 className='text-2xl text-center my-2'><span>Time</span></h3>
                                     }
