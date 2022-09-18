@@ -114,7 +114,7 @@ function Weather() {
                             {/* sunrise and sunset info */}
                             <p className='text-center text-xl mt-4'>Country: {sys?.country}</p>
                             <div className='flex justify-around w-96 border-b border-white mb-4'>
-                                {/* here i get the time is by default 1663479596 from api, that's whay i can't convert it into hour. because ms count start after 1970, and the default time here is befor that.*/}
+                                {/* here i get the time is by default 1663479596 from api, that's whay i can't convert it into hour. because ms count start after 1970.*/}
                                 <span>
                                     <p className='text-center text-xl'>Sunrise</p>
                                     {sys ?
